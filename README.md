@@ -2,6 +2,10 @@
 
 > Vue Auth & more
 
+# Runing app demo
+
+[Click here for a preview of the app](https://vuejsauth.netlify.com/);
+
 ## Build Setup
 
 ``` bash
