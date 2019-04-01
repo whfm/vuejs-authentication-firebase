@@ -1,8 +1,9 @@
 var path = require('path')
 var webpack = require('webpack')
 
+
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -10,13 +11,11 @@ module.exports = {
     filename: 'build.js'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {
-          }
+          loaders: {}
         }
       },
       {
@@ -58,12 +57,12 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   sourceMap: true,
+    //   compress: {
+    //     warnings: false
+    //   }
+    // }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
